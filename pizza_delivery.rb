@@ -1,6 +1,8 @@
 require_relative "menu.rb"
+require_relative "order.rb"
 
 menu = Menu.new
+order = Order.new
 
 done = false
 
@@ -18,6 +20,7 @@ while not done
   case choice
     when 1
       menu.print
+      menu.make_choice
     when 2
       done = true
     else
