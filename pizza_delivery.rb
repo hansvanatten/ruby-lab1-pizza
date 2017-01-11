@@ -13,6 +13,7 @@ while not done
   puts "What can I do for you?"
   puts "1: Order a pizza"
   puts "2: Nothing"
+  puts "3: Check out (€ #{order.value})" if order.value > 0
   puts "------------------------------"
 
   #get some input from the customer
@@ -20,7 +21,8 @@ while not done
   case choice
     when 1
       menu.print
-      menu.make_choice
+      pizza = menu.make_choice
+      order.add(pizza)
     when 2
       done = true
     else
